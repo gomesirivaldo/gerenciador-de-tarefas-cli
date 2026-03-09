@@ -32,3 +32,36 @@ def listar_tarefas(tarefas):
         status = "✔" if tarefa["concluida"] else "✘"
 
         print(f'{tarefa["id"]} - {tarefa["descricao"]} [{status}]')
+
+def concluir_tarefa(tarefas):
+    id_tarefa = int(input("Digite o ID da tarefa para concluir: "))
+
+    for tarefa in tarefas:
+
+        if tarefa["id"] == id_tarefa:
+
+            tarefa["concluida"] = True
+
+            salvar_tarefas(tarefas)
+
+            print("Tarefa concluída com sucesso.")
+            return
+    
+    print("Tarefa não encontrada.")
+
+def remover_tarefa(tarefas):
+
+    id_tarefa = int(input("Digite o ID da tarefa para remover: "))
+
+    for tarefa in tarefas:
+
+        if tarefa["id"] == id_tarefa:
+
+            tarefas.remove(tarefa)
+
+            salvar_tarefas(tarefas)
+
+            print("Tarefa removida com sucesso.")
+            return
+    
+    print("Tarefa não encontrada.")
