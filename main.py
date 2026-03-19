@@ -1,5 +1,6 @@
 from tarefas import adicionar_tarefa, listar_tarefas, concluir_tarefa, remover_tarefa
 from arquivo import carregar_tarefas
+from utils import mostrar_menu
 
 def main():
 
@@ -12,16 +13,8 @@ def main():
 
     while True:
 
-        print("================================")
-        print("######### TASK MANAGER #########")
-        print("================================")
-        print("1 - Adicionar tarefa")
-        print("2 - Listar tarefas")
-        print("3 - Concluir tarefa")
-        print("4 - Remover tarefa")
-        print("5 - Sair")
-        print("================================")
-
+        mostrar_menu()
+        
         opcao = input("Escolha uma opção: ")
 
         print("________________________________")
