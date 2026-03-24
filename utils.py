@@ -1,3 +1,5 @@
+import os
+
 def pedir_id():
 
     while True:
@@ -8,6 +10,14 @@ def pedir_id():
     
         except ValueError:
             print("Por favor, digite um número válido.")
+
+def limpar_tela():
+
+    os.system("cls" if os.name == "nt" else "clear")
+
+def pausar():
+
+    input("\nPressione ENTER para continuar...")
 
 def mostrar_menu():
 

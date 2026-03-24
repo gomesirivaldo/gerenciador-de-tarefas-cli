@@ -1,6 +1,6 @@
 from tarefas import adicionar_tarefa, listar_tarefas, concluir_tarefa, remover_tarefa
 from arquivo import carregar_tarefas
-from utils import mostrar_menu
+from utils import mostrar_menu, limpar_tela, pausar
 
 def main():
 
@@ -13,6 +13,7 @@ def main():
 
     while True:
 
+        limpar_tela()
         mostrar_menu()
         
         opcao = input("Escolha uma opção: ")
@@ -20,15 +21,19 @@ def main():
         print("________________________________")
         if opcao == "1":
             proximo_id= adicionar_tarefa(tarefas, proximo_id)
+            pausar()
 
         elif opcao == "2":
             listar_tarefas(tarefas)
+            pausar()
 
         elif opcao == "3":
             concluir_tarefa(tarefas)
+            pausar()
 
         elif opcao == "4":
             remover_tarefa(tarefas)
+            pausar()
 
         elif opcao == "5":
             print("Saindo...")
